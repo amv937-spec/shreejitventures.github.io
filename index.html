@@ -15,18 +15,20 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            overflow-x: hidden;
         }
         
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: rgba(30, 60, 114, 0.95);
+            backdrop-filter: blur(10px);
             color: white;
             padding: 0.8rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
         
         nav {
@@ -48,7 +50,13 @@
             width: auto;
             background: white;
             padding: 5px 15px;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .logo-container img:hover {
+            transform: scale(1.05);
         }
         
         .nav-links {
@@ -60,70 +68,133 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
             font-weight: 500;
+            position: relative;
         }
         
-        .nav-links a:hover {
-            opacity: 0.8;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f4a261;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
             color: white;
-            padding: 150px 2rem 100px;
+            padding: 150px 2rem 120px;
             text-align: center;
             margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
         
         .hero-logo {
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
             height: auto;
             margin: 0 auto 2rem;
             background: white;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeInScale 1s ease;
         }
         
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
         
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .hero-tagline {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
             animation: fadeInUp 1s ease 0.2s backwards;
-            color: #f4a261;
-            font-weight: 600;
+            background: linear-gradient(to right, #f4a261, #e76f51);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(244, 162, 97, 0.3);
         }
         
         .cta-button {
             display: inline-block;
-            background: #f4a261;
+            background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 1.2rem 3rem;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 1.1rem;
+            transition: all 0.3s;
             animation: fadeInUp 1s ease 0.4s backwards;
+            box-shadow: 0 10px 30px rgba(244, 162, 97, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            background: #e76f51;
+            box-shadow: 0 15px 40px rgba(244, 162, 97, 0.5);
         }
         
         /* Services Section */
         .services {
-            padding: 80px 2rem;
-            background: #f8f9fa;
+            padding: 100px 2rem;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
         }
         
         .container {
@@ -133,50 +204,204 @@
         
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1e3c72;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
         
         .service-card {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border-top: 4px solid #f4a261;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(244, 162, 97, 0.05) 0%, rgba(231, 111, 81, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
         }
         
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(244, 162, 97, 0.2);
         }
         
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .service-card:hover .service-icon {
+            animation: none;
+            transform: scale(1.2) rotate(5deg);
+            transition: transform 0.3s;
         }
         
         .service-card h3 {
             color: #1e3c72;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+            font-weight: 600;
         }
         
         .service-card p {
             color: #666;
             line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        /* Founder Section */
+        .founder {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .founder-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .founder-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .founder-name {
+            font-size: 3rem;
+            background: linear-gradient(to right, #f4a261, #e76f51);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 20px rgba(244, 162, 97, 0.3);
+        }
+        
+        .founder-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            opacity: 0.95;
+            line-height: 1.8;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            border-left: 4px solid #f4a261;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+            color: white;
+            padding: 80px 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        .stats::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.15);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .stat-item:hover {
+            transform: scale(1.1);
+            background: rgba(255,255,255,0.25);
+        }
+        
+        .stat-item h3 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .stat-item p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 500;
         }
         
         /* About Section */
         .about {
-            padding: 80px 2rem;
+            padding: 100px 2rem;
             background: white;
         }
         
@@ -187,73 +412,82 @@
         }
         
         .about-content p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: #555;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        
-        /* Stats Section */
-        .stats {
-            background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
-            color: white;
-            padding: 60px 2rem;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .stat-item h3 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 2;
+            text-align: justify;
         }
         
         /* Contact Section */
         .contact {
-            padding: 80px 2rem;
-            background: #f8f9fa;
+            padding: 100px 2rem;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
         }
         
         .contact-content {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             text-align: center;
         }
         
         .contact-info {
-            margin-top: 2rem;
+            margin-top: 3rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
         
         .contact-item {
-            margin: 1.5rem 0;
-            font-size: 1.1rem;
+            margin: 2rem 0;
+            font-size: 1.15rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(244, 162, 97, 0.05) 0%, rgba(231, 111, 81, 0.05) 100%);
+            border-radius: 10px;
+            border-left: 4px solid #f4a261;
+            transition: all 0.3s;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(244, 162, 97, 0.2);
         }
         
         .contact-item strong {
+            color: #f4a261;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-item a {
+            color: #1e3c72;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
             color: #f4a261;
         }
         
         /* Footer */
         footer {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: white;
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
         }
         
         footer p {
-            opacity: 0.8;
+            opacity: 0.9;
+            font-size: 1.05rem;
+        }
+        
+        .footer-tagline {
+            color: #f4a261;
+            font-weight: 600;
+            margin-top: 0.5rem;
         }
         
         /* Animations */
@@ -270,12 +504,8 @@
         
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
+            .hero-tagline {
+                font-size: 1.3rem;
             }
             
             .nav-links {
@@ -294,6 +524,18 @@
             .hero-logo {
                 max-width: 100%;
                 padding: 15px;
+            }
+            
+            .founder-name {
+                font-size: 2rem;
+            }
+            
+            .stat-item h3 {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -316,15 +558,18 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/6a492d7d-e35c-4ac8-acc5-1abea55f0d52/2025-12-11T05-01-35-453Z-d0f14d47-chat-image-1765429295435-0.jpg" alt="Shreejit Ventures LLP" class="hero-logo">
-        <p>Turning Visions Into Value</p>
-        <a href="#contact" class="cta-button">Get Started</a>
+        <div class="hero-content">
+            <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/6a492d7d-e35c-4ac8-acc5-1abea55f0d52/2025-12-11T05-01-35-453Z-d0f14d47-chat-image-1765429295435-0.jpg" alt="Shreejit Ventures LLP" class="hero-logo">
+            <p class="hero-tagline">Turning Visions Into Value</p>
+            <a href="#contact" class="cta-button">Start Your Journey</a>
+        </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive financial solutions tailored to your success</p>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">📈</div>
@@ -360,23 +605,28 @@
         </div>
     </section>
 
+    <!-- Founder Section -->
+    <section class="founder">
+        <div class="founder-content">
+            <h2 class="founder-title">Meet Our Founder</h2>
+            <h3 class="founder-name">AMIT BOHRA</h3>
+            <p class="founder-quote">"At Shreejit Ventures LLP, we believe in transforming financial aspirations into tangible success. Our commitment is to provide personalized, strategic guidance that empowers our clients to achieve their dreams and build lasting wealth."</p>
+        </div>
+    </section>
+
     <!-- Stats Section -->
     <section class="stats">
         <div class="stats-grid">
             <div class="stat-item">
-                <h3>500+</h3>
+                <h3>97</h3>
                 <p>Happy Clients</p>
             </div>
             <div class="stat-item">
-                <h3>$50M+</h3>
+                <h3>₹12 Cr</h3>
                 <p>Assets Under Management</p>
             </div>
             <div class="stat-item">
-                <h3>15+</h3>
-                <p>Years Experience</p>
-            </div>
-            <div class="stat-item">
-                <h3>98%</h3>
+                <h3>77%</h3>
                 <p>Client Satisfaction</p>
             </div>
         </div>
@@ -386,10 +636,11 @@
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">About Shreejit Ventures LLP</h2>
+            <p class="section-subtitle">Your trusted partner in financial excellence</p>
             <div class="about-content">
-                <p>Shreejit Ventures LLP is a premier investment and financial services firm dedicated to turning visions into value. With years of experience in the financial industry, we provide expert guidance and innovative solutions to help individuals and businesses achieve their financial goals.</p>
-                <p>Our team of seasoned professionals combines deep market knowledge with a client-first approach to deliver exceptional results. We believe in building long-term relationships based on trust, transparency, and superior performance.</p>
-                <p>Whether you're planning for retirement, growing your wealth, or seeking corporate financial solutions, Shreejit Ventures LLP is your trusted partner for financial success.</p>
+                <p>Shreejit Ventures LLP is a premier investment and financial services firm based in Ahmedabad, dedicated to turning visions into value. Founded by Amit Bohra, we bring years of expertise in the financial industry, providing expert guidance and innovative solutions to help individuals and businesses achieve their financial goals.</p>
+                <p>Our team of seasoned professionals combines deep market knowledge with a client-first approach to deliver exceptional results. We believe in building long-term relationships based on trust, transparency, and superior performance. With ₹12 Crores in assets under management and 97 satisfied clients, we have established ourselves as a reliable partner in wealth creation.</p>
+                <p>Whether you're planning for retirement, growing your wealth, or seeking corporate financial solutions, Shreejit Ventures LLP is your trusted partner for financial success. We are committed to understanding your unique needs and crafting personalized strategies that align with your vision.</p>
             </div>
         </div>
     </section>
@@ -398,17 +649,22 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Ready to start your financial journey with us?</p>
             <div class="contact-content">
-                <p>Ready to start your financial journey with us? Contact our team today for a consultation.</p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <strong>Email:</strong> info@shreejitventures.com
+                        <strong>📧 Email</strong>
+                        <a href="mailto:shreejitventures@outlook.com">shreejitventures@outlook.com</a>
                     </div>
                     <div class="contact-item">
-                        <strong>Phone:</strong> +1 (555) 123-4567
+                        <strong>📱 Phone</strong>
+                        <a href="tel:+919035604120">+91-9035604120</a>
                     </div>
                     <div class="contact-item">
-                        <strong>Address:</strong> 123 Financial District, New York, NY 10004
+                        <strong>📍 Address</strong>
+                        B-225, Advance Business Park,<br>
+                        Shahibaug, Ahmedabad – 380004<br>
+                        Gujarat, India
                     </div>
                 </div>
             </div>
@@ -417,7 +673,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Shreejit Ventures LLP. All rights reserved. | Turning Visions Into Value</p>
+        <p>&copy; 2025 Shreejit Ventures LLP. All rights reserved.</p>
+        <p class="footer-tagline">Turning Visions Into Value</p>
     </footer>
 </body>
 </html>
