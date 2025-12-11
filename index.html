@@ -581,15 +581,29 @@
         
         footer p {
             opacity: 0.9;
-            font-size: 1.1rem;
-            margin: 0.5rem 0;
+            font-size: 1.05rem;
+            margin: 0.8rem 0;
+            line-height: 1.8;
+        }
+        
+        .footer-credentials {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: rgba(244, 162, 97, 0.1);
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        .footer-credentials strong {
+            color: #f4a261;
+            font-weight: 700;
         }
         
         .footer-tagline {
             color: #f4a261;
             font-weight: 700;
-            font-size: 1.2rem;
-            margin-top: 1rem;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
             letter-spacing: 1px;
         }
         
@@ -824,12 +838,17 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Shreejit Ventures LLP. All rights reserved.</p>
-        <p>SEBI Registered Investment Advisor | Serving HNI Clients Across India</p>
+        <div class="footer-credentials">
+            <p><strong>AMFI Registered Mutual Fund Distributor</strong><br>ARN: 321993</p>
+            <p><strong>APMI Associate Member</strong><br>Association of Portfolio Managers in India<br>APRN: 05155</p>
+        </div>
+        <p>Serving HNI Clients Across India with Excellence</p>
         <p class="footer-tagline">Turning Visions Into Value</p>
     </footer>
 
     <script>
         console.log('Shreejit Ventures LLP - HNI Wealth Management Platform');
+        console.log('AMFI ARN: 321993 | APMI APRN: 05155');
         console.log('Mutual Funds | PMS (₹50L+) | AIF (₹1Cr+)');
         console.log('Contact: +91-9035604120');
     </script>
