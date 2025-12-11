@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Shreejit Ventures LLP - Turning Visions Into Value</title>
+    <title>Shreejit Ventures LLP - Elite Wealth Management for HNI Clients</title>
     <style>
         * {
             margin: 0;
@@ -19,53 +17,51 @@
             line-height: 1.6;
             color: #333;
             overflow-x: hidden;
+            background: #fff;
         }
         
         /* Header & Navigation */
         header {
-            background: rgba(30, 60, 114, 0.95);
+            background: rgba(10, 25, 47, 0.98);
             backdrop-filter: blur(10px);
             color: white;
-            padding: 0.8rem 0;
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(244, 162, 97, 0.3);
         }
         
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
+            padding: 0 3rem;
         }
         
         .logo-container img {
-            height: 50px;
+            height: 55px;
             width: auto;
             background: white;
-            padding: 5px 15px;
+            padding: 8px 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(244, 162, 97, 0.3);
+            transition: all 0.3s;
         }
         
         .logo-container img:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(244, 162, 97, 0.5);
         }
         
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .nav-links a {
@@ -73,7 +69,9 @@
             text-decoration: none;
             transition: all 0.3s;
             font-weight: 500;
+            font-size: 1.05rem;
             position: relative;
+            letter-spacing: 0.5px;
         }
         
         .nav-links a::after {
@@ -83,7 +81,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #f4a261;
+            background: linear-gradient(to right, #f4a261, #e76f51);
             transition: width 0.3s;
         }
         
@@ -93,11 +91,11 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+            background: linear-gradient(135deg, #0a192f 0%, #1e3c72 50%, #0a192f 100%);
             color: white;
-            padding: 150px 2rem 120px;
+            padding: 180px 3rem 140px;
             text-align: center;
-            margin-top: 70px;
+            margin-top: 80px;
             position: relative;
             overflow: hidden;
         }
@@ -109,235 +107,304 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s linear infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100px); }
+            background: radial-gradient(circle at 20% 50%, rgba(244, 162, 97, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(231, 111, 81, 0.1) 0%, transparent 50%);
         }
         
         .hero-content {
             position: relative;
             z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .hero-logo {
-            max-width: 650px;
+            max-width: 700px;
             width: 100%;
             height: auto;
-            margin: 0 auto 2rem;
+            margin: 0 auto 3rem;
             background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
             animation: fadeInScale 1s ease;
         }
         
         @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
         
         .hero-tagline {
-            font-size: 1.8rem;
-            margin-bottom: 2.5rem;
-            animation: fadeInUp 1s ease 0.2s backwards;
-            background: linear-gradient(to right, #f4a261, #e76f51);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #f4a261, #e76f51, #f4a261);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 700;
-            text-shadow: 0 2px 10px rgba(244, 162, 97, 0.3);
+            font-weight: 800;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+        
+        .hero-subtitle strong {
+            color: #f4a261;
+            font-weight: 600;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.4s backwards;
         }
         
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
             color: white;
-            padding: 1.2rem 3rem;
+            padding: 1.3rem 3.5rem;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s;
-            animation: fadeInUp 1s ease 0.4s backwards;
-            box-shadow: 0 10px 30px rgba(244, 162, 97, 0.4);
+            box-shadow: 0 10px 35px rgba(244, 162, 97, 0.4);
             position: relative;
             overflow: hidden;
         }
         
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-        
-        .cta-button:hover::before {
-            left: 100%;
+        .cta-button-secondary {
+            background: transparent;
+            border: 2px solid #f4a261;
+            color: #f4a261;
+            box-shadow: none;
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(244, 162, 97, 0.5);
+            box-shadow: 0 15px 45px rgba(244, 162, 97, 0.6);
         }
         
-        /* Services Section */
-        .services {
-            padding: 100px 2rem;
-            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+        /* Investment Solutions Section */
+        .investment-solutions {
+            padding: 120px 3rem;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         
         .section-title {
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #0a192f 0%, #1e3c72 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
         
         .section-subtitle {
             text-align: center;
             color: #666;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            margin-bottom: 5rem;
+            font-weight: 300;
+        }
+        
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
             margin-bottom: 4rem;
         }
         
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .service-card {
+        .investment-card {
             background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border-top: 4px solid #f4a261;
+            border: 2px solid transparent;
             position: relative;
             overflow: hidden;
         }
         
-        .service-card::before {
+        .investment-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(244, 162, 97, 0.05) 0%, rgba(231, 111, 81, 0.05) 100%);
-            opacity: 0;
-            transition: opacity 0.3s;
+            height: 5px;
+            background: linear-gradient(to right, #f4a261, #e76f51);
         }
         
-        .service-card:hover::before {
-            opacity: 1;
+        .investment-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(244, 162, 97, 0.25);
+            border-color: rgba(244, 162, 97, 0.3);
         }
         
-        .service-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(244, 162, 97, 0.2);
-        }
-        
-        .service-icon {
-            font-size: 3.5rem;
+        .investment-icon {
+            font-size: 4rem;
             margin-bottom: 1.5rem;
             display: inline-block;
-            animation: bounce 2s infinite;
         }
         
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .service-card:hover .service-icon {
-            animation: none;
-            transform: scale(1.2) rotate(5deg);
-            transition: transform 0.3s;
-        }
-        
-        .service-card h3 {
-            color: #1e3c72;
+        .investment-card h3 {
+            color: #0a192f;
             margin-bottom: 1rem;
-            font-size: 1.6rem;
-            font-weight: 600;
+            font-size: 1.8rem;
+            font-weight: 700;
         }
         
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
+        .investment-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .investment-card p {
+            color: #555;
+            line-height: 1.9;
             font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .investment-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .investment-features li {
+            padding: 0.7rem 0;
+            color: #666;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .investment-features li:before {
+            content: '✓';
+            color: #f4a261;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 100px 3rem;
+            background: linear-gradient(135deg, #0a192f 0%, #1e3c72 100%);
+            color: white;
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .why-card {
+            background: rgba(255,255,255,0.08);
+            padding: 2.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(244, 162, 97, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .why-card:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-10px);
+            border-color: rgba(244, 162, 97, 0.5);
+        }
+        
+        .why-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #f4a261;
+        }
+        
+        .why-card p {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.8;
         }
         
         /* Founder Section */
         .founder {
-            padding: 80px 2rem;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
+            padding: 100px 3rem;
+            background: white;
             text-align: center;
         }
         
         .founder-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            padding: 4rem;
+            background: linear-gradient(135deg, rgba(244, 162, 97, 0.05) 0%, rgba(231, 111, 81, 0.05) 100%);
+            border-radius: 20px;
+            border: 2px solid rgba(244, 162, 97, 0.2);
         }
         
-        .founder-title {
-            font-size: 2.5rem;
+        .founder-label {
+            font-size: 1.1rem;
+            color: #f4a261;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 1rem;
-            font-weight: 700;
         }
         
         .founder-name {
-            font-size: 3rem;
-            background: linear-gradient(to right, #f4a261, #e76f51);
+            font-size: 3.5rem;
+            background: linear-gradient(to right, #0a192f, #1e3c72);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 20px rgba(244, 162, 97, 0.3);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
         }
         
         .founder-quote {
             font-size: 1.3rem;
             font-style: italic;
-            opacity: 0.95;
-            line-height: 1.8;
+            color: #555;
+            line-height: 2;
             padding: 2rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
             border-left: 4px solid #f4a261;
+            background: white;
+            border-radius: 10px;
         }
         
         /* Stats Section */
         .stats {
             background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
             color: white;
-            padding: 80px 2rem;
+            padding: 100px 3rem;
             position: relative;
             overflow: hidden;
         }
@@ -347,9 +414,9 @@
             position: absolute;
             top: -50%;
             right: -10%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255,255,255,0.1);
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.08);
             border-radius: 50%;
         }
         
@@ -358,15 +425,15 @@
             position: absolute;
             bottom: -50%;
             left: -10%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255,255,255,0.1);
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.08);
             border-radius: 50%;
         }
         
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 3rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -377,59 +444,85 @@
         
         .stat-item {
             background: rgba(255,255,255,0.15);
-            padding: 2.5rem;
+            padding: 3rem 2rem;
             border-radius: 20px;
             backdrop-filter: blur(10px);
             transition: all 0.3s;
-            border: 2px solid rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.25);
         }
         
         .stat-item:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
             background: rgba(255,255,255,0.25);
         }
         
         .stat-item h3 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-size: 4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 900;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.2);
         }
         
         .stat-item p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.95;
             font-weight: 500;
+            letter-spacing: 0.5px;
         }
         
-        /* About Section */
-        .about {
-            padding: 100px 2rem;
+        /* Process Section */
+        .process {
+            padding: 100px 3rem;
             background: white;
         }
         
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
         }
         
-        .about-content p {
-            font-size: 1.15rem;
-            color: #555;
-            margin-bottom: 2rem;
-            line-height: 2;
-            text-align: justify;
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(244, 162, 97, 0.3);
+        }
+        
+        .process-step h4 {
+            font-size: 1.4rem;
+            color: #0a192f;
+            margin-bottom: 1rem;
+        }
+        
+        .process-step p {
+            color: #666;
+            line-height: 1.8;
         }
         
         /* Contact Section */
         .contact {
-            padding: 100px 2rem;
+            padding: 100px 3rem;
             background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
         }
         
         .contact-content {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
@@ -437,37 +530,40 @@
         .contact-info {
             margin-top: 3rem;
             background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            padding: 4rem;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 2px solid rgba(244, 162, 97, 0.1);
         }
         
         .contact-item {
-            margin: 2rem 0;
-            font-size: 1.15rem;
-            padding: 1.5rem;
+            margin: 2.5rem 0;
+            font-size: 1.2rem;
+            padding: 2rem;
             background: linear-gradient(135deg, rgba(244, 162, 97, 0.05) 0%, rgba(231, 111, 81, 0.05) 100%);
-            border-radius: 10px;
-            border-left: 4px solid #f4a261;
+            border-radius: 15px;
+            border-left: 5px solid #f4a261;
             transition: all 0.3s;
         }
         
         .contact-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(244, 162, 97, 0.2);
+            transform: translateX(15px);
+            box-shadow: 0 8px 20px rgba(244, 162, 97, 0.2);
         }
         
         .contact-item strong {
             color: #f4a261;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
         }
         
         .contact-item a {
-            color: #1e3c72;
+            color: #0a192f;
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 500;
         }
         
         .contact-item a:hover {
@@ -476,70 +572,45 @@
         
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: linear-gradient(135deg, #0a192f 0%, #1e3c72 100%);
             color: white;
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 4rem 3rem;
+            border-top: 3px solid #f4a261;
         }
         
         footer p {
             opacity: 0.9;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
         }
         
         .footer-tagline {
             color: #f4a261;
-            font-weight: 600;
-            margin-top: 0.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            letter-spacing: 1px;
         }
         
         /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-tagline {
-                font-size: 1.3rem;
-            }
-            
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .logo-container img {
-                height: 40px;
-            }
-            
-            .hero-logo {
-                max-width: 100%;
-                padding: 15px;
-            }
-            
-            .founder-name {
-                font-size: 2rem;
-            }
-            
-            .stat-item h3 {
-                font-size: 2.5rem;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+            nav { padding: 0 1.5rem; }
+            .hero { padding: 140px 1.5rem 100px; }
+            .hero-tagline { font-size: 1.6rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .section-title { font-size: 2.2rem; }
+            .founder-name { font-size: 2.5rem; }
+            .stat-item h3 { font-size: 3rem; }
+            .investment-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+            .nav-links { gap: 1rem; font-size: 0.95rem; }
         }
     </style>
 </head>
@@ -552,7 +623,8 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#process">Process</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -564,86 +636,161 @@
         <div class="hero-content">
             <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/6a492d7d-e35c-4ac8-acc5-1abea55f0d52/2025-12-11T05-01-35-453Z-d0f14d47-chat-image-1765429295435-0.jpg" alt="Shreejit Ventures LLP" class="hero-logo">
             <p class="hero-tagline">Turning Visions Into Value</p>
-            <a href="#contact" class="cta-button">Start Your Journey</a>
+            <p class="hero-subtitle">Elite Wealth Management for <strong>High Net Worth Individuals</strong></p>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button">Schedule Consultation</a>
+                <a href="#solutions" class="cta-button cta-button-secondary">Explore Solutions</a>
+            </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- Investment Solutions Section -->
+    <section class="investment-solutions" id="solutions">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Comprehensive financial solutions tailored to your success</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📈</div>
-                    <h3>Investment Management</h3>
-                    <p>Strategic portfolio management tailored to your financial goals with expert market analysis and risk assessment.</p>
+            <h2 class="section-title">Premium Investment Solutions</h2>
+            <p class="section-subtitle">Tailored wealth management strategies for discerning HNI clients</p>
+            
+            <div class="investment-grid">
+                <div class="investment-card">
+                    <div class="investment-icon">📊</div>
+                    <span class="investment-tag">MUTUAL FUNDS</span>
+                    <h3>Curated Mutual Funds</h3>
+                    <p>Access to India's top-performing mutual fund schemes with expert fund selection and portfolio optimization for consistent wealth creation.</p>
+                    <ul class="investment-features">
+                        <li>Equity, Debt & Hybrid Funds</li>
+                        <li>Tax-Efficient Planning</li>
+                        <li>SIP & Lumpsum Strategies</li>
+                        <li>Regular Portfolio Rebalancing</li>
+                        <li>Goal-Based Investment Planning</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Wealth Advisory</h3>
-                    <p>Comprehensive wealth planning services to help you build, preserve, and transfer wealth across generations.</p>
+
+                <div class="investment-card">
+                    <div class="investment-icon">💎</div>
+                    <span class="investment-tag">PMS - MIN ₹50 LAKHS</span>
+                    <h3>Portfolio Management Services</h3>
+                    <p>Personalized portfolio management with direct equity investments, customized to your risk appetite and financial objectives.</p>
+                    <ul class="investment-features">
+                        <li>Dedicated Portfolio Manager</li>
+                        <li>Direct Equity Ownership</li>
+                        <li>Customized Investment Strategy</li>
+                        <li>Active Risk Management</li>
+                        <li>Transparent Reporting</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>Financial Planning</h3>
-                    <p>Customized financial strategies designed to achieve your short-term and long-term financial objectives.</p>
+
+                <div class="investment-card">
+                    <div class="investment-icon">🏆</div>
+                    <span class="investment-tag">AIF - MIN ₹1 CRORE</span>
+                    <h3>Alternative Investment Funds</h3>
+                    <p>Exclusive access to Category I, II & III AIFs including venture capital, private equity, and hedge fund strategies for sophisticated investors.</p>
+                    <ul class="investment-features">
+                        <li>Private Equity Opportunities</li>
+                        <li>Venture Capital Funds</li>
+                        <li>Real Estate & Infrastructure</li>
+                        <li>Hedge Fund Strategies</li>
+                        <li>High Alpha Generation Potential</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🏢</div>
-                    <h3>Corporate Finance</h3>
-                    <p>Expert guidance on mergers, acquisitions, capital raising, and corporate restructuring solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Why HNI Clients Choose Us</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Unparalleled expertise and personalized service</p>
+            
+            <div class="why-grid">
+                <div class="why-card">
+                    <h4>🎯 HNI-Focused Approach</h4>
+                    <p>Specialized strategies designed exclusively for high net worth individuals with minimum ticket sizes and premium service standards.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3>Market Research</h3>
-                    <p>In-depth market analysis and insights to help you make informed investment decisions.</p>
+                <div class="why-card">
+                    <h4>🔒 Confidentiality & Trust</h4>
+                    <p>Complete discretion and privacy in all financial dealings with secure, compliant wealth management practices.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🔒</div>
-                    <h3>Risk Management</h3>
-                    <p>Comprehensive risk assessment and mitigation strategies to protect your investments.</p>
+                <div class="why-card">
+                    <h4>📈 Proven Track Record</h4>
+                    <p>₹12 Crores in AUM with 97 satisfied HNI clients who trust us with their wealth creation journey.</p>
+                </div>
+                <div class="why-card">
+                    <h4>🤝 Personalized Service</h4>
+                    <p>Dedicated relationship manager and customized investment solutions aligned with your unique financial goals.</p>
+                </div>
+                <div class="why-card">
+                    <h4>🌐 Diversified Portfolio</h4>
+                    <p>Access to multiple asset classes including equities, debt, alternatives, and structured products.</p>
+                </div>
+                <div class="why-card">
+                    <h4>📊 Transparent Reporting</h4>
+                    <p>Regular performance updates, detailed analytics, and comprehensive portfolio reviews for complete visibility.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Founder Section -->
-    <section class="founder">
-        <div class="founder-content">
-            <h2 class="founder-title">Meet Our Founder</h2>
-            <h3 class="founder-name">AMIT BOHRA</h3>
-            <p class="founder-quote">"At Shreejit Ventures LLP, we believe in transforming financial aspirations into tangible success. Our commitment is to provide personalized, strategic guidance that empowers our clients to achieve their dreams and build lasting wealth."</p>
+    <section class="founder" id="about">
+        <div class="container">
+            <h2 class="section-title">Leadership</h2>
+            <div class="founder-content">
+                <p class="founder-label">Founder & Managing Partner</p>
+                <h3 class="founder-name">AMIT BOHRA</h3>
+                <p class="founder-quote">"At Shreejit Ventures LLP, we understand that High Net Worth Individuals require more than just investment advice—they need a trusted partner who can navigate complex financial landscapes, preserve wealth across generations, and unlock exclusive opportunities. Our commitment is to deliver bespoke wealth management solutions with the highest standards of integrity, confidentiality, and performance."</p>
+            </div>
         </div>
     </section>
 
     <!-- Stats Section -->
     <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>97</h3>
-                <p>Happy Clients</p>
-            </div>
-            <div class="stat-item">
-                <h3>₹12 Cr</h3>
-                <p>Assets Under Management</p>
-            </div>
-            <div class="stat-item">
-                <h3>77%</h3>
-                <p>Client Satisfaction</p>
+        <div class="container">
+            <h2 class="section-title" style="color: white; margin-bottom: 3rem;">Our Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>97</h3>
+                    <p>HNI Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3>₹12 Cr</h3>
+                    <p>Assets Under Management</p>
+                </div>
+                <div class="stat-item">
+                    <h3>77%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- Process Section -->
+    <section class="process" id="process">
         <div class="container">
-            <h2 class="section-title">About Shreejit Ventures LLP</h2>
-            <p class="section-subtitle">Your trusted partner in financial excellence</p>
-            <div class="about-content">
-                <p>Shreejit Ventures LLP is a premier investment and financial services firm based in Ahmedabad, dedicated to turning visions into value. Founded by Amit Bohra, we bring years of expertise in the financial industry, providing expert guidance and innovative solutions to help individuals and businesses achieve their financial goals.</p>
-                <p>Our team of seasoned professionals combines deep market knowledge with a client-first approach to deliver exceptional results. We believe in building long-term relationships based on trust, transparency, and superior performance. With ₹12 Crores in assets under management and 97 satisfied clients, we have established ourselves as a reliable partner in wealth creation.</p>
-                <p>Whether you're planning for retirement, growing your wealth, or seeking corporate financial solutions, Shreejit Ventures LLP is your trusted partner for financial success. We are committed to understanding your unique needs and crafting personalized strategies that align with your vision.</p>
+            <h2 class="section-title">Our Wealth Management Process</h2>
+            <p class="section-subtitle">A systematic approach to building and preserving your wealth</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Discovery & Analysis</h4>
+                    <p>Comprehensive assessment of your financial situation, goals, risk profile, and investment preferences.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Strategy Design</h4>
+                    <p>Customized investment strategy across Mutual Funds, PMS, and AIF based on your unique requirements.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Implementation</h4>
+                    <p>Seamless execution of investment plan with access to premium products and exclusive opportunities.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Monitoring & Review</h4>
+                    <p>Continuous portfolio monitoring, regular performance reviews, and proactive rebalancing.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -651,8 +798,8 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Ready to start your financial journey with us?</p>
+            <h2 class="section-title">Begin Your Wealth Journey</h2>
+            <p class="section-subtitle">Connect with us for a confidential consultation</p>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
@@ -664,7 +811,7 @@
                         <a href="tel:+919035604120">+91-9035604120</a>
                     </div>
                     <div class="contact-item">
-                        <strong>📍 Address</strong>
+                        <strong>📍 Office Address</strong>
                         B-225, Advance Business Park,<br>
                         Shahibaug, Ahmedabad – 380004<br>
                         Gujarat, India
@@ -677,14 +824,14 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Shreejit Ventures LLP. All rights reserved.</p>
+        <p>SEBI Registered Investment Advisor | Serving HNI Clients Across India</p>
         <p class="footer-tagline">Turning Visions Into Value</p>
     </footer>
 
-    <!-- Version Check -->
     <script>
-        console.log('Shreejit Ventures LLP - Version: Dec 11, 2025 - 10:45 AM IST');
-        console.log('Contact: +91-9035604120 | shreejitventures@outlook.com');
-        console.log('Founder: AMIT BOHRA');
+        console.log('Shreejit Ventures LLP - HNI Wealth Management Platform');
+        console.log('Mutual Funds | PMS (₹50L+) | AIF (₹1Cr+)');
+        console.log('Contact: +91-9035604120');
     </script>
 </body>
 </html>
