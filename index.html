@@ -22,7 +22,7 @@
         
         /* Header & Navigation */
         header {
-            background: rgba(10, 25, 47, 0.98);
+            background: rgba(30, 52, 85, 0.98);
             backdrop-filter: blur(10px);
             color: white;
             padding: 1rem 0;
@@ -31,7 +31,6 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            border-bottom: 1px solid rgba(244, 162, 97, 0.3);
         }
         
         nav {
@@ -43,19 +42,27 @@
             padding: 0 3rem;
         }
         
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
         .logo-container img {
-            height: 55px;
-            width: auto;
-            background: white;
-            padding: 8px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(244, 162, 97, 0.3);
-            transition: all 0.3s;
+            height: 45px;
+            width: 45px;
+            transition: transform 0.3s;
         }
         
         .logo-container img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(244, 162, 97, 0.5);
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: white;
         }
         
         .nav-links {
@@ -89,13 +96,13 @@
             width: 100%;
         }
         
-        /* Hero Section */
+        /* Hero Section - Elegant Design */
         .hero {
-            background: linear-gradient(135deg, #0a192f 0%, #1e3c72 50%, #0a192f 100%);
+            background: linear-gradient(135deg, #1e3455 0%, #2d4a73 50%, #1e3455 100%);
             color: white;
-            padding: 180px 3rem 140px;
+            padding: 200px 3rem 150px;
             text-align: center;
-            margin-top: 80px;
+            margin-top: 70px;
             position: relative;
             overflow: hidden;
         }
@@ -107,65 +114,124 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(244, 162, 97, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(231, 111, 81, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 40%, rgba(244, 162, 97, 0.08) 0%, transparent 60%),
+                        radial-gradient(circle at 70% 70%, rgba(231, 111, 81, 0.08) 0%, transparent 60%);
         }
         
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
-        .hero-logo {
-            max-width: 700px;
-            width: 100%;
-            height: auto;
+        .hero-logo-icon {
+            width: 150px;
+            height: 150px;
             margin: 0 auto 3rem;
             background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+            border-radius: 50%;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             animation: fadeInScale 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            from { opacity: 0; transform: scale(0.8) translateY(30px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
         
-        .hero-tagline {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #f4a261, #e76f51, #f4a261);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-            letter-spacing: 1px;
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+            color: white;
+            text-transform: uppercase;
             animation: fadeInUp 1s ease 0.2s backwards;
         }
         
         .hero-subtitle {
-            font-size: 1.4rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 3rem;
+            font-size: 1.5rem;
             font-weight: 300;
-            letter-spacing: 0.5px;
+            letter-spacing: 4px;
+            margin-bottom: 3rem;
+            color: rgba(255,255,255,0.85);
+            text-transform: uppercase;
             animation: fadeInUp 1s ease 0.3s backwards;
         }
         
-        .hero-subtitle strong {
+        .hero-divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #f4a261, #e76f51);
+            margin: 2rem auto;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+        
+        .hero-credentials {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 3rem 0;
+            animation: fadeInUp 1s ease 0.5s backwards;
+        }
+        
+        .credential-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2.5rem;
+            border-radius: 10px;
+            border: 2px solid rgba(244, 162, 97, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .credential-box:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(244, 162, 97, 0.6);
+            transform: translateY(-5px);
+        }
+        
+        .credential-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .credential-value {
+            font-size: 1.3rem;
+            font-weight: 700;
             color: #f4a261;
-            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .hero-tagline {
+            font-size: 1.8rem;
+            font-style: italic;
+            color: #f4a261;
+            margin: 3rem 0;
+            font-weight: 300;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease 0.6s backwards;
         }
         
         .cta-buttons {
             display: flex;
             gap: 2rem;
             justify-content: center;
-            animation: fadeInUp 1s ease 0.4s backwards;
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease 0.7s backwards;
         }
         
         .cta-button {
@@ -179,8 +245,8 @@
             font-size: 1.1rem;
             transition: all 0.3s;
             box-shadow: 0 10px 35px rgba(244, 162, 97, 0.4);
-            position: relative;
-            overflow: hidden;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         
         .cta-button-secondary {
@@ -210,12 +276,13 @@
             text-align: center;
             font-size: 3rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #0a192f 0%, #1e3c72 100%);
+            background: linear-gradient(135deg, #1e3455 0%, #2d4a73 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         
         .section-subtitle {
@@ -224,6 +291,7 @@
             font-size: 1.2rem;
             margin-bottom: 5rem;
             font-weight: 300;
+            letter-spacing: 1px;
         }
         
         .investment-grid {
@@ -267,7 +335,7 @@
         }
         
         .investment-card h3 {
-            color: #0a192f;
+            color: #1e3455;
             margin-bottom: 1rem;
             font-size: 1.8rem;
             font-weight: 700;
@@ -316,7 +384,7 @@
         /* Why Choose Us Section */
         .why-choose {
             padding: 100px 3rem;
-            background: linear-gradient(135deg, #0a192f 0%, #1e3c72 100%);
+            background: linear-gradient(135deg, #1e3455 0%, #2d4a73 100%);
             color: white;
         }
         
@@ -380,13 +448,13 @@
         
         .founder-name {
             font-size: 3.5rem;
-            background: linear-gradient(to right, #0a192f, #1e3c72);
+            background: linear-gradient(to right, #1e3455, #2d4a73);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 900;
             margin-bottom: 2rem;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
         
         .founder-quote {
@@ -506,7 +574,7 @@
         
         .process-step h4 {
             font-size: 1.4rem;
-            color: #0a192f;
+            color: #1e3455;
             margin-bottom: 1rem;
         }
         
@@ -560,7 +628,7 @@
         }
         
         .contact-item a {
-            color: #0a192f;
+            color: #1e3455;
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
@@ -572,7 +640,7 @@
         
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #0a192f 0%, #1e3c72 100%);
+            background: linear-gradient(135deg, #1e3455 0%, #2d4a73 100%);
             color: white;
             text-align: center;
             padding: 4rem 3rem;
@@ -604,7 +672,8 @@
             font-weight: 700;
             font-size: 1.3rem;
             margin-top: 1.5rem;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            font-style: italic;
         }
         
         /* Animations */
@@ -617,14 +686,16 @@
         @media (max-width: 768px) {
             nav { padding: 0 1.5rem; }
             .hero { padding: 140px 1.5rem 100px; }
-            .hero-tagline { font-size: 1.6rem; }
-            .hero-subtitle { font-size: 1.1rem; }
+            .hero-title { font-size: 2.5rem; letter-spacing: 4px; }
+            .hero-subtitle { font-size: 1.1rem; letter-spacing: 2px; }
             .section-title { font-size: 2.2rem; }
             .founder-name { font-size: 2.5rem; }
             .stat-item h3 { font-size: 3rem; }
             .investment-grid { grid-template-columns: 1fr; }
             .cta-buttons { flex-direction: column; }
             .nav-links { gap: 1rem; font-size: 0.95rem; }
+            .hero-credentials { flex-direction: column; gap: 1.5rem; }
+            .hero-logo-icon { width: 120px; height: 120px; }
         }
     </style>
 </head>
@@ -633,7 +704,8 @@
     <header>
         <nav>
             <div class="logo-container">
-                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/6a492d7d-e35c-4ac8-acc5-1abea55f0d52/2025-12-11T05-01-35-453Z-d0f14d47-chat-image-1765429295435-0.jpg" alt="Shreejit Ventures LLP">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/6a492d7d-e35c-4ac8-acc5-1abea55f0d52/2025-12-12T04-42-08-144Z-2f0f929a-chat-image-1765514528126-0.jpg" alt="Shreejit Ventures">
+                <span class="logo-text">SHREEJIT VENTURES</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -645,12 +717,31 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Elegant Design -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/6a492d7d-e35c-4ac8-acc5-1abea55f0d52/2025-12-11T05-01-35-453Z-d0f14d47-chat-image-1765429295435-0.jpg" alt="Shreejit Ventures LLP" class="hero-logo">
+            <div class="hero-logo-icon">
+                <img src="https://nyc3.digitaloceanspaces.com/bhindi-drive/files/6a492d7d-e35c-4ac8-acc5-1abea55f0d52/2025-12-12T04-42-08-144Z-2f0f929a-chat-image-1765514528126-0.jpg" alt="Shreejit Ventures">
+            </div>
+            
+            <h1 class="hero-title">SHREEJIT VENTURES</h1>
+            <p class="hero-subtitle">Limited Liability Partnership</p>
+            
+            <div class="hero-divider"></div>
+            
+            <div class="hero-credentials">
+                <div class="credential-box">
+                    <div class="credential-label">AMFI Registered</div>
+                    <div class="credential-value">ARN: 321993</div>
+                </div>
+                <div class="credential-box">
+                    <div class="credential-label">APMI Member</div>
+                    <div class="credential-value">APRN: 05155</div>
+                </div>
+            </div>
+            
             <p class="hero-tagline">Turning Visions Into Value</p>
-            <p class="hero-subtitle">Elite Wealth Management for <strong>High Net Worth Individuals</strong></p>
+            
             <div class="cta-buttons">
                 <a href="#contact" class="cta-button">Schedule Consultation</a>
                 <a href="#solutions" class="cta-button cta-button-secondary">Explore Solutions</a>
@@ -847,10 +938,9 @@
     </footer>
 
     <script>
-        console.log('Shreejit Ventures LLP - HNI Wealth Management Platform');
+        console.log('Shreejit Ventures LLP - Elite HNI Wealth Management');
         console.log('AMFI ARN: 321993 | APMI APRN: 05155');
-        console.log('Mutual Funds | PMS (₹50L+) | AIF (₹1Cr+)');
-        console.log('Contact: +91-9035604120');
+        console.log('Version: Premium Hero Design - Dec 12, 2025');
     </script>
 </body>
 </html>
